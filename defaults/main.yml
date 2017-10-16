@@ -5,6 +5,9 @@ springboot_src:
 # Mandatory variable : spring boot application name
 springboot_application_name:
 
+# Optional: you can specify a different kind of app type, as war can be supported
+springboot_application_type: jar
+
 # Optional : you can specify a template file to manage you app properties
 springboot_propertyfile_template:
 

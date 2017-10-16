@@ -33,10 +33,10 @@
     owner: "{{ springboot_user }}"
     group: "{{ springboot_group }}"
 
-- name: "Copy jar application"
+- name: "Copy application"
   copy:
     src: "{{ springboot_src }}"
-    dest: "{{ springboot_deploy_folder }}/{{ springboot_application_name }}.jar"
+    dest: "{{ springboot_deploy_folder }}/{{ springboot_application_name }}.{{ springboot_application_type }}"
     owner: "{{ springboot_user }}"
     group: "{{ springboot_group }}"
     mode: "u+x"

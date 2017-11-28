@@ -5,7 +5,10 @@ After=syslog.target
 [Service]
 User={{ springboot_user }}
 Restart=on-failure
-ExecStart={{ springboot_deploy_folder }}/{{ springboot_application_name }}.{{ springboot_application_type }} run
+Type=forking
+ExecStart={{ springboot_deploy_folder }}/{{ springboot_application_name }}.{{ springboot_application_type }} start
+ExecStop={{ springboot_deploy_folder }}/{{ springboot_application_name }}.{{ springboot_application_type }} stop
+ExecReload={{ springboot_deploy_folder }}/{{ springboot_application_name }}.{{ springboot_application_type }} reload
 SuccessExitStatus=143
 
 [Install]

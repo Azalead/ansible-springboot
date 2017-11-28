@@ -3,11 +3,9 @@ Description={{ springboot_application_name }}
 After=syslog.target
 
 [Service]
-User="{{ springboot_user }}"
+User={{ springboot_user }}
 Restart=on-failure
-ExecStart="{{ springboot_deploy_folder }}/{{ springboot_application_name }}.{{ springboot_application_type }} start"
-ExecStop="{{ springboot_deploy_folder }}/{{ springboot_application_name }}.{{ springboot_application_type }} stop"
-ExecReload="{{ springboot_deploy_folder }}/{{ springboot_application_name }}.{{ springboot_application_type }} reload"
+ExecStart={{ springboot_deploy_folder }}/{{ springboot_application_name }}.{{ springboot_application_type }} run
 SuccessExitStatus=143
 
 [Install]

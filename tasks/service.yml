@@ -17,5 +17,11 @@
     owner: "{{ springboot_user }}"
     group: "{{ springboot_group }}"
   when: use_system_d
-  notify:
-    - "Restart application"
+
+- name: "Restart application"
+  systemd:
+    name: "{{ springboot_application_name }}"
+    enabled: yes
+    daemon-reload: yes
+    state: restarted
+  when: use_system_d
